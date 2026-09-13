@@ -1,7 +1,9 @@
-# [NOMBRE DEL PROYECTO]
-### Nombre y carné de los integrantes: 
+# Tarea 1 - API con Stored Procedures 
+### Nombre y carné de los integrantes:
+Yader Siezar Chaves
+Carné: 2024134032 
 
-
-### Estado del proyecto:
+### Estado de la tarea:
+Finalizado al 100%
 ### Enlace del video:
-Recordar que el video debe ser público para ser visto por el profesor
+Falta
