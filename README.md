@@ -136,7 +136,28 @@ Resultado esperado:
     sp_Person_Update
 ```
 
-### 4.2 Configurar la conexión a la base de datos
+### 4.2 Configuracion de postman
+
+El repositorio incluye una colección de Postman lista para importar en:
+```bash
+    codigo/API_AdventureWorks.postman_collection.json
+```
+
+Para importarla debe: 
+1. Abrir Postman.
+2. Click en "Import".
+3. Seleccionar el archivo `API AdventureWorks.postman_collection.json`.
+4. Postman creará la colección "API AdventureWorks" con las 7 peticiones listas.
+
+Configuración de la variable de entorno
+
+La colección usa una variable llamada `baseUrl`. Para configurarla:
+
+1. Click derecho en la colección → "Edit" → "Variables".
+2. Editar la variable `baseUrl` con la URL de su API (cambiando IP_MV por la ip de su maquina virtual):
+   - `http://IP_MV:3000`
+
+### 4.3 Configurar la conexión a la base de datos
 
 Editar `proyectos/db.js` y ajustar las credenciales (se debe cambiar 'PASSWORD' por la contraseña de su maquina virtual):
 
@@ -163,7 +184,7 @@ const config = {
 module.exports = { sql, config };
 ```
 
-### 4.3 Arrancar la API
+### 4.4 Arrancar la API
 ```bash
     cd proyectos
 
@@ -184,19 +205,19 @@ Para acceder desde Windows (host), el adaptador de red debe estar en modo NAT co
 
 Petición (debe cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/
+    GET http://IP_MV:3000/
 ```
 
 Respuesta esperada:
 ```json
-    {"message":"API AdventureWorks funcionando 🚀"}
+    {"message":"API AdventureWorks funcionando"}
 ```
 
 ### 5.2 Lista de todas las personas
 
 Petición (debe cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/api/persons/all
+    GET http://IP_MV:3000/api/persons/all
 ```
 
 Respuesta (solo muestro una parte):
@@ -225,7 +246,7 @@ Respuesta (solo muestro una parte):
 
 Petición (debe cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/api/persons/join
+    GET http://IP_MV:3000/api/persons/join
 ```
 
 Respuesta (solo muestro una parte):
@@ -244,7 +265,7 @@ Respuesta (solo muestro una parte):
 
 Petición (debe cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/api/persons/285
+    GET http://IP_MV:3000/api/persons/285
 ```
 
 Respuesta esperada:
@@ -266,7 +287,7 @@ Respuesta esperada:
 
 Petición (debe cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    POST http://IP_VM:3000/api/persons
+    POST http://IP_MV:3000/api/persons
     Content-Type: application/json
 
     {
@@ -284,7 +305,7 @@ Respuesta esperada (en 'ID' se retornará un ID nuevo para cada persona insertad
 
 Petición (cambiar 'ID' por el NewID retornado y cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    PUT http://IP_VM:3000/api/persons/'ID'
+    PUT http://IP_MV:3000/api/persons/'ID'
     Content-Type: application/json
 
     {
@@ -300,14 +321,14 @@ Respuesta esperada:
 
 Verificar cambios con (cambiar 'ID' por el NewID retornado y cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/api/persons/'ID'
+    GET http://IP_MV:3000/api/persons/'ID'
 ```
 
 ### 5.7 Eliminar persona
 
 Petición (cambiar 'ID' por el NewID retornado y cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    DELETE http://IP_VM:3000/api/persons/'ID'
+    DELETE http://IP_MV:3000/api/persons/'ID'
 ```
 
 **Respuesta esperada:**
@@ -315,11 +336,11 @@ Petición (cambiar 'ID' por el NewID retornado y cambiar IP_MV por la ip de su m
     {"ok":true}
 ```
 
-### 7.8 Verificar eliminación
+### 5.8 Verificar eliminación
 
 Petición (cambiar 'ID' por el NewID retornado y cambiar IP_MV por la ip de su maquina virtual):
 ```bash
-    GET http://IP_VM:3000/api/persons/'ID'
+    GET http://IP_MV:3000/api/persons/'ID'
 ```
 
 Respuesta esperada:
@@ -327,7 +348,7 @@ Respuesta esperada:
     []
 ```
 
-## 8. Estructura del repositorio
+## 6. Estructura del repositorio
 
 ```bash
 Tarea-1_Bases_de_Datos2/

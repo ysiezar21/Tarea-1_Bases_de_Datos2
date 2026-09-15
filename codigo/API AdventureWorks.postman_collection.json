@@ -1,0 +1,206 @@
+{
+  "info": {
+    "_postman_id": "e842cdc1-051e-4c67-972d-30fae0644604",
+    "name": "API AdventureWorks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58195978",
+    "_collection_link": "https://go.postman.co/collection/58195978-e842cdc1-051e-4c67-972d-30fae0644604?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Checkear Servidor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAll",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const template = `\r\n<table border=\"1\" style=\"border-collapse: collapse; width: 100%; font-family: Arial;\">\r\n    <thead style=\"background: #0078d4; color: white;\">\r\n        <tr>\r\n            <th>ID</th>\r\n            <th>Nombre</th>\r\n            <th>Apellido</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        {{#each response}}\r\n        <tr>\r\n            <td>{{BusinessEntityID}}</td>\r\n            <td>{{FirstName}}</td>\r\n            <td>{{LastName}}</td>\r\n        </tr>\r\n        {{/each}}\r\n    </tbody>\r\n</table>\r\n`;\r\n\r\npm.visualizer.set(template, {\r\n    response: pm.response.json()\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/persons/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetJoin",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const template = `\r\n<table border=\"1\" style=\"border-collapse: collapse; width: 100%; font-family: Arial;\">\r\n    <thead style=\"background: #0078d4; color: white;\">\r\n        <tr>\r\n            <th>ID</th>\r\n            <th>Nombre</th>\r\n            <th>Apellido</th>\r\n            <th>Email</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        {{#each response}}\r\n        <tr>\r\n            <td>{{BusinessEntityID}}</td>\r\n            <td>{{FirstName}}</td>\r\n            <td>{{LastName}}</td>\r\n            <td>{{EmailAddress}}</td>\r\n        </tr>\r\n        {{/each}}\r\n    </tbody>\r\n</table>\r\n`;\r\n\r\npm.visualizer.set(template, {\r\n    response: pm.response.json()\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/persons/join",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons",
+            "join"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SearchByID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const template = `\r\n<table border=\"1\" style=\"border-collapse: collapse; width: 100%; font-family: Arial;\">\r\n    <thead style=\"background: #0078d4; color: white;\">\r\n        <tr>\r\n            <th>ID</th>\r\n            <th>Nombre</th>\r\n            <th>Apellido</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        {{#each response}}\r\n        <tr>\r\n            <td>{{BusinessEntityID}}</td>\r\n            <td>{{FirstName}}</td>\r\n            <td>{{LastName}}</td>\r\n        </tr>\r\n        {{/each}}\r\n    </tbody>\r\n</table>\r\n`;\r\n\r\npm.visualizer.set(template, {\r\n    response: pm.response.json()\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/persons/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Insert",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Yader\",\r\n  \"lastName\": \"Siezar\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/persons",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Yader Stiven\",\r\n  \"lastName\": \"Siezar Modificado\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/persons/20779",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons",
+            "20779"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/persons/20779",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "persons",
+            "20779"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
